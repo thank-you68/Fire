@@ -1,0 +1,35 @@
+/* responsive.css - phone first. Wider screens get a header row, a hero and a two-column detector. */
+@media (min-width:40rem){
+  .site-header{padding-bottom:0}
+  .brand{margin:0}
+  nav{flex:0 0 auto}
+  nav a{flex:none;padding:0 1.1rem;min-height:3.5rem}
+  .hero-actions{display:flex}.hero-actions .btn{width:auto;min-width:11rem}
+  .buttons{grid-template-columns:repeat(3,1fr)}.buttons #btn-upload{grid-column:auto}
+}
+@media (min-width:48rem){
+  main{padding-top:2.25rem}
+  .hero{grid-template-columns:1.05fr .95fr;gap:3rem;margin-bottom:3.5rem}
+  .how-list{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:56rem){
+  .detector{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);column-gap:2rem;align-items:start}
+  .model-status{grid-column:1/-1;justify-self:start;margin-bottom:0}
+  .capture{grid-column:1;grid-row:2}
+  .action{grid-column:1;grid-row:3}
+  .reading{grid-column:2;grid-row:2/span 2;position:sticky;top:5.5rem;padding:1.5rem}
+}
+@media (min-width:48rem){.facts{grid-template-columns:repeat(3,1fr);gap:2rem}}
+@media (min-width:40rem){
+  body{padding-bottom:0}
+  .site-header{padding-bottom:0}
+  nav{position:static;padding:0;background:none;border-top:0}
+  nav a{min-height:3.5rem;border-top:0;border-bottom:3px solid transparent;font-size:.95rem}
+  nav a[aria-current="page"]{border-bottom-color:var(--amber)}
+}
+@media (min-width:40rem){
+  nav a{flex-direction:row;gap:.5rem;font-size:.95rem}
+  nav .ico{width:1.1rem;height:1.1rem}
+  nav a[aria-current="page"]{border-top-color:transparent;border-bottom-color:var(--fire)}
+  .hist-tools{grid-template-columns:1fr 12rem}
+}
