@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08080A">
+<title>History - Fire and Smoke Recognition</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%275%27 fill=%27%2308080A%27/%3E%3Cpath d=%27M12 3c1.4 3.6 5 5.4 5 10a5 5 0 0 1-10 0c0-2.8 1.6-4.2 2.7-6.2.7 1.8 1.5 2.5 2.3 2.5 0-2.2-.5-4 0-6.3z%27 fill=%27%23FF3347%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><p class="brand"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1.6 4 5.5 6 5.5 11a5.5 5.5 0 0 1-11 0c0-3 1.8-4.6 3-6.8.8 2 1.6 2.8 2.5 2.8 0-2.4-.6-4.4 0-7z" fill="currentColor"/></svg>FIRE AND SMOKE DETECTION SYSTEM</p>
+<nav><a href="../index.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Home</a><a href="../pages/detection.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>Detection</a><a href="../pages/history.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>History</a><a href="../pages/about.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>About</a></nav></header>
+<main id="main">
+<section class="prose">
+  <h1 class="page-title">Past results</h1>
+  <p>Your last results are kept on this device only. Pictures are never saved. Nothing is sent to a server.</p>
+  <div class="hist-tools"><input id="history-search" type="search" placeholder="Search results" aria-label="Search history"><select id="history-filter" aria-label="Filter by result"><option value="all">All results</option><option value="fire">Fire</option><option value="smoke">Smoke</option><option value="neither">Neither</option><option value="uncertain">Uncertain</option></select></div>
+  <p id="history-empty" class="history-empty">No results yet. Analyze a picture on the Detection page.</p>
+  <ul id="history-list" class="history-list"></ul>
+  <button id="btn-clear-history" type="button" disabled>Clear history</button>
+</section>
+</main>
+<footer class="safety-notice"><strong>Educational prototype. Not a certified alarm or emergency service.</strong> The predictions can be wrong. This is not a real fire alarm and does not replace real fire-safety equipment. If you suspect a real fire, leave the area and call your local emergency number.</footer>
+<script src="../assets/js/history.js"></script>
+</body>
+</html>
