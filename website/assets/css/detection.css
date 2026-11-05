@@ -50,6 +50,8 @@ body[data-state="loading"] .stage::after{content:"";position:absolute;left:0;rig
 .bar-track::after{content:"";position:absolute;top:-.3rem;bottom:-.3rem;left:var(--thr);width:2px;background:#fff}
 .bar-val{text-align:right;font-variant-numeric:tabular-nums}
 .bar-note{margin:.2rem 0 0;font-size:.8rem;color:#A1A1AA}
+.success-box{margin:0 0 1rem;padding:.8rem 1rem;border-left:4px solid var(--ok);border-radius:.5rem;background:rgba(47,158,91,.22);color:#DDF5E7;font-weight:500}
+.reading{scroll-margin-top:5.5rem;scroll-margin-bottom:5rem}
 .error-box{margin:1rem 0 0;padding:.8rem 1rem;border-left:4px solid #FF3347;border-radius:.5rem;background:rgba(255,51,71,.25);color:#FFE0E3;font-weight:500}
 
 /* Demo bars on the landing page reuse .bar */
