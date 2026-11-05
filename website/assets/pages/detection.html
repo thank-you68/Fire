@@ -40,8 +40,9 @@
     <h2><span class="n">2</span>Analyze it</h2>
     <button id="btn-analyze" class="primary" type="button" disabled>Analyze Image</button>
   </section>
-  <section class="step reading" aria-live="polite">
+  <section id="results" class="step reading" aria-live="polite">
     <h2><span class="n">3</span>Read the result</h2>
+    <p id="success-box" class="success-box" role="status" hidden></p>
     <p id="loading" class="loading" hidden>Looking at your picture...</p>
     <p id="result-word" class="result-word">No prediction yet</p>
     <p id="result-score" class="result-score"></p>
