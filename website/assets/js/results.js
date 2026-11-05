@@ -12,6 +12,7 @@
       $('result-score').textContent = '';
       $('result-banner').hidden = true;
       $('score-bars').textContent = '';
+      this.hideSuccess();
     },
     showResult: function (r) {
       var C = FSR.config, label = C.LABELS[r.predictedClass], topLabel = C.LABELS[r.topClass];
@@ -20,7 +21,6 @@
             $('result-score').textContent = first + '\nScores are not guarantees. Predictions can be wrong.';
       this.showBars(r);
       var b = $('result-banner'); b.textContent = r.message; b.className = 'banner banner-' + r.predictedClass; b.hidden = false;
-      if (w.scrollIntoView) w.scrollIntoView({ behavior: 'smooth', block: 'center' });
     },
     showBars: function (r) {
       var C = FSR.config, box = $('score-bars'); box.textContent = '';
@@ -36,6 +36,20 @@
       var note = document.createElement('p'); note.className = 'bar-note';
       note.textContent = 'The dark line is the threshold (' + C.THRESHOLD.toFixed(2) + '). If the highest score is below it, the result is Uncertain. Scores are not probabilities.';
       box.appendChild(note);
+    },
+    showSuccess: function (msg) { var e = $('success-box'); e.textContent = msg; e.hidden = false; },
+    hideSuccess: function () { $('success-box').hidden = true; $('success-box').textContent = ''; },
+    // Smoothly brings the result panel into view, only if it is not already fully visible
+    // (on wide screens the panel is sticky and usually already on screen, so nothing moves).
+    reveal: function () {
+      var el = $('results'); if (!el || !el.scrollIntoView) return;
+      var head = document.querySelector('.site-header'), nav = document.querySelector('nav');
+      var top = head ? head.getBoundingClientRect().bottom : 0, bottom = window.innerHeight;
+      if (nav && getComputedStyle(nav).position === 'fixed') bottom = nav.getBoundingClientRect().top;
+      var r = el.getBoundingClientRect();
+      if (r.top >= top && r.bottom <= bottom) return;
+      var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      el.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
     },
     showError: function (msg) { var e = $('error-box'); e.textContent = msg; e.hidden = false; },
     hideError: function () { $('error-box').hidden = true; $('error-box').textContent = ''; }
