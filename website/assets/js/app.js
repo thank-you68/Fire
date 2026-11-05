@@ -67,9 +67,14 @@
   });
   $('btn-analyze').addEventListener('click', async function () {
     $('btn-analyze').textContent = 'Analyzing...'; FSR.results.hideError(); FSR.results.clear(); setState('loading'); FSR.results.showLoading(true);
-    try { var res = await FSR.prediction.run(S.img); FSR.results.showResult(res); $('result-score').textContent += '\nAnalyzed: ' + new Date().toLocaleString(); if (FSR.history) FSR.history.add(res); }
+    try {
+      var res = await FSR.prediction.run(S.img); FSR.results.showResult(res); $('result-score').textContent += '\nAnalyzed: ' + new Date().toLocaleString(); if (FSR.history) FSR.history.add(res);
+      FSR.results.showSuccess('Analysis completed successfully! Your results are now ready.');
+    }
     catch (e) { fail(e, true); }
     finally { FSR.results.showLoading(false); $('btn-analyze').textContent = 'Analyze Image'; restState(); }
+    // Scroll only after the loading message is gone and the layout has settled (success or error).
+    requestAnimationFrame(function () { FSR.results.reveal(); });
   });
   var stage = document.querySelector('.stage');
   ['dragenter', 'dragover'].forEach(function (t) { stage.addEventListener(t, function (e) { e.preventDefault(); stage.classList.add('drag'); }); });
