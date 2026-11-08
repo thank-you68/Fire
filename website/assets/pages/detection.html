@@ -18,7 +18,7 @@
 <h1 class="page-title">Check a picture</h1>
 <p class="lede">Take a photo or upload one. The model runs in your browser, so the picture stays on your device.</p>
 <section class="detector" aria-label="Fire and smoke detector">
-  <p id="model-status" class="model-status" data-tone="busy">Loading model...</p>
+  <div class="model-bar"><p id="model-status" class="model-status" data-tone="busy" role="status">Loading model...</p><button id="btn-retry-model" class="retry" type="button" hidden>Retry</button></div>
   <section class="step capture">
     <h2><span class="n">1</span>Choose a picture</h2>
     <div class="stage">
@@ -52,7 +52,13 @@
   </section>
 </section>
 </main>
-<footer class="safety-notice"><strong>Educational prototype. Not a certified alarm or emergency service.</strong> The predictions can be wrong. This is not a real fire alarm and does not replace real fire-safety equipment. If you suspect a real fire, leave the area and call your local emergency number.</footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">Fire and Smoke Detection System</p>
+    <p class="footer-copy">&copy; <span id="footer-year">2026</span><span class="footer-rights"> All rights reserved.</span></p>
+  </div>
+</footer>
+<script src="../assets/js/footer.js"></script>
 <script src="../assets/js/model-loader.js"></script>
 <script src="../assets/js/image-processing.js"></script>
 <script src="../assets/js/image-upload.js"></script>
