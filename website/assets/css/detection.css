@@ -4,6 +4,9 @@
 .model-status[data-tone="ok"]{color:var(--ink)}.model-status[data-tone="ok"]::before{background:var(--ok)}
 .model-status[data-tone="bad"]{color:var(--fire)}.model-status[data-tone="bad"]::before{background:var(--fire)}
 
+.model-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin:0 0 1.25rem}
+.model-bar .model-status{margin:0}
+.retry{width:auto;min-height:2.2rem;padding:.2rem .95rem;font-size:.85rem;border-radius:.4rem}
 .detector{display:grid;gap:1.25rem}
 .step{margin:0}
 .step h2{display:flex;align-items:center;gap:.6rem}
@@ -78,6 +81,7 @@ body[data-state="loading"] .stage::after{content:"";position:absolute;left:0;rig
 .leds{display:flex;gap:1rem;margin:0 0 .9rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#71717A}
 .led{display:flex;align-items:center;gap:.4rem}
 .led::before{content:"";width:.7rem;height:.7rem;border-radius:50%;background:#26262c;border:1px solid #3A2028}
+.led.fire::before{background:var(--fire);border-color:var(--fire)}
 .led.on{color:#E4E4E7}
 .led.on::before{background:var(--c);border-color:var(--c);box-shadow:0 0 10px var(--c)}
 
