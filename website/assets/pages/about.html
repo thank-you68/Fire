@@ -8,6 +8,11 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%275%27 fill=%27%2308080A%27/%3E%3Cpath d=%27M12 3c1.4 3.6 5 5.4 5 10a5 5 0 0 1-10 0c0-2.8 1.6-4.2 2.7-6.2.7 1.8 1.5 2.5 2.3 2.5 0-2.2-.5-4 0-6.3z%27 fill=%27%23FF3347%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/responsive.css">
+<style>
+.credit{padding:.6rem .8rem;border-left:4px solid #FF6B4A;background:#241014;color:#FFD6D0;border-radius:.4rem;margin:0 0 .85rem}
+.credit p{margin:0 0 .7rem}.credit p:last-child{margin-bottom:0}
+.credit a{color:#fff;text-decoration:underline;text-underline-offset:2px}.credit strong{color:#fff}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -24,11 +29,22 @@
   <h2>Technology stack</h2>
   <p>HTML, CSS and plain JavaScript with no framework. TensorFlow.js runs a MobileNetV2 transfer-learning model in the browser. Past results are kept in the browser&rsquo;s localStorage. The model is trained separately in Google Colab.</p>
   <h2>Limits</h2>
-  <p>Predictions can be wrong. &ldquo;Neither&rdquo; only means the model did not classify the picture as fire or smoke. It never means a place is safe. Only still pictures are analyzed. This is <strong>not</strong> a real fire alarm and does not replace real fire-safety equipment.</p>
+  <p>Predictions can be wrong. A result of &ldquo;Neither&rdquo; only means that the model did not classify the picture as fire or smoke. It does not mean a place is safe. Only still pictures are analyzed. This is <strong>not</strong> a real fire alarm, and it does not replace real fire-safety equipment.</p>
   <h2>Dataset credit</h2>
-  <p class="todo">Team: write the dataset name, official source link and licence here, as the licence requires (see docs/project-documentation).</p>
+  <div class="credit">
+  <p>The model was trained using images from two public datasets. We thank their authors.</p>
+  <p><strong>Fire and smoke images: D-Fire.</strong> Created by the researchers of GAIA (Solutions on Demand). Source: <a href="https://github.com/gaiasd/DFireDataset" target="_blank" rel="noopener noreferrer">github.com/gaiasd/DFireDataset</a>. Licence: <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0 Universal</a>. Please cite: P. V. A. B. de Venancio, A. C. Lisboa and A. V. Barbosa, &ldquo;An automatic fire detection system based on deep convolutional neural networks for low-power, resource-constrained devices,&rdquo; <em>Neural Computing and Applications</em>, 2022.</p>
+  <p><strong>People images: Microsoft COCO (Common Objects in Context).</strong> Source: <a href="https://cocodataset.org" target="_blank" rel="noopener noreferrer">cocodataset.org</a>. The COCO annotations are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the COCO Consortium. The images come from Flickr and remain under their original owners&rsquo; terms of use. Please cite: T.-Y. Lin et al., &ldquo;Microsoft COCO: Common Objects in Context,&rdquo; <em>European Conference on Computer Vision (ECCV)</em>, 2014.</p>
+  <p>We did not change the datasets&rsquo; licences. D-Fire and COCO are not affiliated with this project and do not endorse it.</p>
+  </div>
 </section>
 </main>
-<footer class="safety-notice"><strong>Educational prototype. Not a certified alarm or emergency service.</strong> The predictions can be wrong. This is not a real fire alarm and does not replace real fire-safety equipment. If you suspect a real fire, leave the area and call your local emergency number.</footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">Fire and Smoke Detection System</p>
+    <p class="footer-copy">&copy; <span id="footer-year">2026</span><span class="footer-rights"> All rights reserved.</span></p>
+  </div>
+</footer>
+<script src="../assets/js/footer.js"></script>
 </body>
 </html>
