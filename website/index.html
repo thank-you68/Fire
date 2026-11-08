@@ -26,7 +26,7 @@
   </div>
   <div class="demo" aria-hidden="true">
     <p class="demo-tag">Static example - not a real prediction</p><svg class="art" viewBox="0 0 64 64" aria-hidden="true"><path d="M22 14c-5-3-3-8 1-10M32 12c-5-4-2-9 3-11M42 14c-5-3-3-8 1-10" fill="none" stroke="#748794" stroke-width="2" stroke-linecap="round"/><path d="M32 18c4 10 14 15 14 28a14 14 0 0 1-28 0c0-8 5-12 8-18 2 6 4 8 6 8 0-6-2-12 0-18z" fill="#F18B45"/><path d="M32 36c3 5 8 8 8 13a8 8 0 0 1-16 0c0-4 3-6 4-9 1 2 2 3 4 3 0-3-1-5 0-7z" fill="#F7B27F"/></svg>
-    <div class="leds"><span class="led" style="--c:#B83A32">Fire</span><span class="led on" style="--c:#748794">Smoke</span><span class="led" style="--c:#B9B3A6">Neither</span></div>
+    <div class="leds"><span class="led fire" style="--c:#FF3347">Fire</span><span class="led on" style="--c:#748794">Smoke</span><span class="led" style="--c:#B9B3A6">Neither</span></div>
     <p class="demo-word">Smoke</p>
     <div class="bar is-top" data-class="smoke"><span class="bar-name">Smoke</span><span class="bar-track"><i style="--w:91%"></i></span><span class="bar-val">0.910</span></div>
     <div class="bar" data-class="fire"><span class="bar-name">Fire</span><span class="bar-track"><i style="--w:4%"></i></span><span class="bar-val">0.040</span></div>
@@ -34,7 +34,7 @@
   </div>
 </section>
 <section class="features" aria-label="Features">
-  <div><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1.5 4 5 5.5 5 10a5 5 0 0 1-10 0c0-3 1.7-4.3 2.8-6.3.7 1.8 1.4 2.4 2.2 2.4 0-2.2-.4-4 0-6.1z"/></svg><strong>Fire Recognition</strong><span>Identify possible fire patterns in uploaded images.</span></div>
+  <div><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1.5 4 5 5.5 5 10a5 5 0 0 1-10 0c0-3 1.7-4.3 2.8-6.3.7 1.8 1.4 2.4 2.2 2.4 0-2.2-.4-4 0-6.1z"/></svg><strong>Fire Recognition</strong><span>Identify possible fire patterns in uploaded and captured images.</span></div>
   <div><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 8.5a4.8 4.8 0 0 1 0 9.5z"/></svg><strong>Smoke Recognition</strong><span>Analyze images for potential smoke.</span></div>
   <div><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><strong>Camera Capture</strong><span>Capture images directly with your phone camera.</span></div>
   <div><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>Detection History</strong><span>Review previous analysis results.</span></div>
@@ -47,8 +47,14 @@
     <li><strong>Review detection results</strong><span>See a score for Fire, Smoke and Neither. Low scores show as Uncertain.</span></li>
   </ol>
 </section>
-<p class="callout"><strong>This is a learning project, not a real fire alarm.</strong> Predictions can be wrong, and &ldquo;Neither&rdquo; never means a place is safe.</p>
+<p class="callout"><strong>This is a learning project, not a real fire alarm.</strong> Predictions can be wrong, and a result of &ldquo;Neither&rdquo; does not mean a place is safe. If you see fire or smell smoke, call your local emergency number.</p>
 </main>
-<footer class="safety-notice"><strong>Educational prototype. Not a certified alarm or emergency service.</strong> The predictions can be wrong. This is not a real fire alarm and does not replace real fire-safety equipment. If you suspect a real fire, leave the area and call your local emergency number.</footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">Fire and Smoke Detection System</p>
+    <p class="footer-copy">&copy; <span id="footer-year">2026</span><span class="footer-rights"> All rights reserved.</span></p>
+  </div>
+</footer>
+<script src="assets/js/footer.js"></script>
 </body>
 </html>
