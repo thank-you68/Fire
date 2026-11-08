@@ -14,7 +14,7 @@
 }
 @media (min-width:56rem){
   .detector{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);column-gap:2rem;align-items:start}
-  .model-status{grid-column:1/-1;justify-self:start;margin-bottom:0}
+  .model-bar{grid-column:1/-1;justify-self:start;margin-bottom:0}
   .capture{grid-column:1;grid-row:2}
   .action{grid-column:1;grid-row:3}
   .reading{grid-column:2;grid-row:2/span 2;position:sticky;top:5.5rem;padding:1.5rem}
