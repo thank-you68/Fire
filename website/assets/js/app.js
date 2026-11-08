@@ -89,9 +89,16 @@
   window.addEventListener('pagehide', stopCamera);
   window.addEventListener('unhandledrejection', function (ev) { fail(ev.reason, false); });
 
-  FSR.results.setModelStatus('Loading model...');
+  // The model is stored in the browser after the first load, so on later visits it shows READY straight away
+  // (no loading message). Analyze switches on as soon as the model is really in memory.
+  function startModel() {
+    $('btn-retry-model').hidden = true;
+    FSR.results.setModelStatus(FSR.modelLoader.cached() ? 'Model ready.' : 'Loading model...');
+    return FSR.modelLoader.load(FSR.results.setModelStatus)
+      .then(function () { FSR.results.setModelStatus('Model ready.'); sync(); })
+      .catch(function (e) { FSR.results.setModelStatus(e.message + ' Analyze is switched off.'); $('btn-retry-model').hidden = false; fail(e); });
+  }
+  $('btn-retry-model').addEventListener('click', function () { FSR.results.hideError(); startModel(); });
   setState('idle');
-  FSR.modelLoader.load()
-    .then(function () { FSR.results.setModelStatus('Model ready.'); sync(); })
-    .catch(function (e) { FSR.results.setModelStatus(e.message + ' Analyze is switched off.'); fail(e); });
+  startModel();
 })();
