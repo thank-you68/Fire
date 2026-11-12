@@ -12,7 +12,7 @@
     MODEL_CACHE_FLAG: 'fsr-model-cache',
     INPUT_SIZE: 224,                            // MUST equal IMAGE_SIZE in notebook 02
     CLASS_ORDER: ['fire', 'smoke', 'neither'],  // MUST equal CLASS_ORDER in notebook 02
-    THRESHOLD: 0.6,                             // REPLACE with the value chosen on VALIDATION data (notebook 02)
+    THRESHOLD: 0.8,                             // REPLACE with the value chosen on VALIDATION data (notebook 02)
     ALLOWED_TYPES: ['image/jpeg', 'image/png'],
     MAX_FILE_BYTES: 5 * 1024 * 1024,
     LABELS: { fire: 'Fire', smoke: 'Smoke', neither: 'Neither', uncertain: 'Uncertain' },
